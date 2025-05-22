@@ -22,8 +22,14 @@ export const useTodoStore = defineStore('toDoItems', () => {
     toDoItems.value.push(item)
   }
 
+  const toggleComplete = (id: number) => {
+    const item = toDoItems.value.find((t) => t.id === id)
+    if (item) item.isCompleted = !item.isCompleted
+  }
+
   return {
     toDoItems,
     addTodo,
+    toggleComplete,
   }
 })

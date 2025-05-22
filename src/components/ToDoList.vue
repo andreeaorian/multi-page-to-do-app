@@ -1,7 +1,12 @@
 <template>
   <div class="todo-container">
     <ul class="todo-list">
-      <TodoItem v-for="item in allTodoItems" :key="item.id" :item="item" />
+      <TodoItem
+        v-for="item in allTodoItems"
+        :key="item.id"
+        :item="item"
+        @toggle="store.toggleComplete(item.id)"
+      />
     </ul>
   </div>
 </template>
