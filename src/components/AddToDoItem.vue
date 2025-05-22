@@ -19,6 +19,7 @@
 </template>
 
 <script setup lang="ts">
+import '@/assets/addToDoItem.css'
 import { ref } from 'vue'
 import { useTodoStore } from '@/stores/todoStore'
 import { useRouter } from 'vue-router'
@@ -41,35 +42,3 @@ const handleSubmit = () => {
   router.push('/')
 }
 </script>
-
-<style scoped>
-.add-todo-container {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 2rem;
-
-  .form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-
-    .field {
-      display: flex;
-      flex-direction: column;
-
-      input,
-      textarea {
-        padding: 0.5rem;
-        font-size: 1rem;
-      }
-    }
-
-    button {
-      align-self: flex-start;
-      padding: 0.5rem 1rem;
-      font-weight: bold;
-      cursor: pointer;
-    }
-  }
-}
-</style>

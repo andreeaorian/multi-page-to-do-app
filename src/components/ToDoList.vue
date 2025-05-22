@@ -24,7 +24,7 @@ const allTodoItems = computed(() => store.toDoItems)
 
 <style scoped>
 .todo-container {
-  padding: 2rem;
+  margin-top: 2rem;
 }
 
 .todo-list {
