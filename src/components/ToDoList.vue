@@ -6,6 +6,7 @@
         :key="item.id"
         :item="item"
         @toggle="store.toggleComplete(item.id)"
+        @delete="store.removeTodoItem(item.id)"
       />
     </ul>
   </div>

@@ -26,7 +26,7 @@ export const useTodoStore = defineStore('toDoItems', () => {
         ],
   )
 
-  const addTodo = (item: TodoItem) => {
+  const addTodoItem = (item: TodoItem) => {
     toDoItems.value.push(item)
   }
 
@@ -35,6 +35,10 @@ export const useTodoStore = defineStore('toDoItems', () => {
     if (item) {
       item.isCompleted = !item.isCompleted
     }
+  }
+
+  const removeTodoItem = (id: number) => {
+    toDoItems.value = toDoItems.value.filter((t) => t.id !== id)
   }
 
   watch(
@@ -47,7 +51,8 @@ export const useTodoStore = defineStore('toDoItems', () => {
 
   return {
     toDoItems,
-    addTodo,
+    addTodoItem,
     toggleComplete,
+    removeTodoItem,
   }
 })

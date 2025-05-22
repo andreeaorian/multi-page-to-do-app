@@ -2,6 +2,7 @@
   <li class="todo-item">
     <input type="checkbox" :checked="item.isCompleted" @change="$emit('toggle')" />
     <span :class="{ lineThrough: item.isCompleted }">{{ item.title }}</span>
+    <button @click="$emit('delete')">Delete</button>
   </li>
 </template>
 
@@ -9,7 +10,7 @@
 import type { ToDoItem } from '@/types/ToDoItem'
 
 defineProps<{ item: ToDoItem }>()
-defineEmits(['toggle'])
+defineEmits(['toggle', 'delete'])
 </script>
 
 <style scoped>
@@ -26,6 +27,16 @@ defineEmits(['toggle'])
     width: 20px;
     height: 20px;
     cursor: pointer;
+  }
+
+  button {
+    background-color: var(--color-button);
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem;
+    cursor: pointer;
+    color: white;
+    margin-left: auto;
   }
 
   &:hover {
