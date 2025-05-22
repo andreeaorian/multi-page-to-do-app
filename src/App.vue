@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
@@ -8,7 +7,11 @@ import HelloWorld from './components/HelloWorld.vue'
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+      <p>
+        Hello, welcome to my Vue 3 playground! This is a simple app to demonstrate the use of Vue
+        Router and Pinia for state management. You can add, edit, and delete items from the list.
+        The app is built using Vue 3, TypeScript, and Vite.
+      </p>
 
       <nav>
         <RouterLink to="/">Home</RouterLink>
