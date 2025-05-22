@@ -26,6 +26,7 @@ import { useRouter } from 'vue-router'
 const title = ref('')
 const description = ref('')
 const store = useTodoStore()
+const router = useRouter()
 
 const handleSubmit = () => {
   if (!title.value.trim()) return
@@ -36,6 +37,8 @@ const handleSubmit = () => {
     description: description.value,
     isCompleted: false,
   })
+
+  router.push('/')
 }
 </script>
 
